@@ -12,13 +12,13 @@ string[] GetArrayFromString(string stringArray)
     return array;
 }
 
-string[] GetNewArray (string[] array)
+string[] GetNewArray (string[] array, int length)
 {
     int count = 0;
     string[] temp = new string[array.Length];
     for(int i = 0; i < array.Length; i++)
     {
-        if(array[i].Length <= 3) 
+        if(array[i].Length <= length) 
         {
             temp[count] = array[i];
             count++;
@@ -37,5 +37,5 @@ Console.WriteLine("Заполните массив через пробел: ");
 string input = Console.ReadLine()!;
 string[] array = GetArrayFromString(input);
 Console.WriteLine(String.Join(", ", array));
-string[] newArray = GetNewArray(array);
+string[] newArray = GetNewArray(array, 3);
 Console.WriteLine(String.Join(", ", newArray));
